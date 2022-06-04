@@ -1,5 +1,15 @@
+<!--**====================================================
+ * @author Jeycorp
+ * @brief 카택스 요금 안내 페이지 클린 코딩
+ * @url https://cartax.biz/price
+ * @description 상단메뉴, 서비스이용 절차, 서비스 소개서, 실시간 문의하기는 채점 대상이 아닙니다.
+ **====================================================
+ * [!] jquery/javascript/bootstrap 외 프레임워크, 라이브러리 사용 금지
+ **====================================================
+ -->
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,9 +18,32 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/script.js"></script>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+    <script src="js/counterup/jquery.counterup.min.js"></script>
+
+    <!--진행바 스크립트 시작-->
+    <script type="text/javascript"
+        src="https://rawcdn.githack.com/mburakerman/prognroll/0feda211643153bce2c69de32ea1b39cdc64ffbe/src/prognroll.js">
+    </script>
+    <script type="text/javascript">
+        $(function () {
+            $("body").prognroll({
+                height: 3,
+                color: "#02c6ff"
+            });
+            $(".content").prognroll({
+                custom: true
+            });
+        });
+    </script>
+    <!--진행바 스크립트 종료-->
 </head>
+
 <body>
+
     <!-- wrap -->
     <div class="wrap">
         <!-- header -->
@@ -30,11 +63,11 @@
                                     <span class="mark-txt">기본 무료</span>로 사용이 가능합니다.
                                 </mark>
                             </b>
-                            
-                        </p>    
+
+                        </p>
                     </div>
                 </div>
-                
+
             </section>
             <!-- price -->
             <section class="price">
@@ -44,9 +77,15 @@
                     </h2>
                     <div class="price-tab">
                         <ul class="price-tab-wrap">
-                            <li class="price-tab-mon active"><a href="#">월간 계약</a></li>
-                            <li class="price-tab-yea"><a href="#">연간 계약</a></li>
+                            <li class="price-tab-mon"><a href="#">월간 계약</a></li>
+                            <li class="price-tab-yea active"><a href="#">연간 계약</a></li>
                         </ul>
+                    </div>
+                    <div class="tab-wrap">
+                        <span class="tab-txt">
+                            연간 계약의 경우 최대<b>29%</b>절감!
+                        </span>
+                        <span class="tab-left"></span>
                     </div>
                     <span class="vat">
                         VAT 별도
@@ -60,7 +99,7 @@
                                 <div class="price-box-1-price">
                                     <p class="price-box-price">
                                         <b>0</b>원
-                                    </p> 
+                                    </p>
                                 </div>
                                 <div class="price-box-1-txt">
                                     <span class="price-box-txt">
@@ -110,10 +149,22 @@
                                     플러스
                                 </h2>
                                 <div class="price-box-1-price">
-                                    <p class="price-box-price">
-                                        <b>0</b>원
-                                    </p> 
+                                    <p class="price-box-price mons">
+                                        <b class="counter">5,000</b>원/월
+                                    </p>
+                                    <span class="price-top">
+                                        차량 1대당
+                                    </span>
+                                    <span class="price-bot">
+                                        <i>연간</i>60,000원
+                                    </span>
+                                    <p class="price-box-price count-active">
+                                        <b class="counter">7,000</b>원/월
+                                    </p>
                                 </div>
+                                <!-- <div class="price-box-1-price count-active">
+                                     
+                                 </div> -->
                                 <div class="price-box-1-txt">
                                     <span class="price-box-txt">
                                         최대 100대 까지 무료로 사용할 수<br>
@@ -164,9 +215,21 @@
                                     프리미엄
                                 </h2>
                                 <div class="price-box-1-price">
-                                    <p class="price-box-price">
-                                        <b>0</b>원
-                                    </p> 
+                                    <p class="price-box-price mons">
+                                        <b class="counter">9,000</b>원/월
+                                    </p>
+                                    <span class="price-top">
+                                        차량 1대당
+                                    </span>
+                                    <span class="price-bot">
+                                        <i>연간</i>108,000원
+                                    </span>
+                                    <p class="price-box-price count-active">
+                                        <b class="counter">12,000</b>원/월
+                                    </p>
+                                    <!-- <div class="price-box-1-price count-active">
+                                         
+                                     </div>  -->
                                 </div>
                                 <div class="price-box-1-txt">
                                     <span class="price-box-txt">
@@ -239,17 +302,59 @@
                                 <a href="#"><span>Q.</span>무료등급의 운행기록 작성 기준이 궁금해요</a>
                                 <i class="ques-img"></i>
                             </li>
+                            <div class="ques-list-wrap ques-list-active ">
+                                <p>
+                                    1명의 사용자는 사용할 수 있는 차량마다 5번 기록할 수 있습니다.<br><br>
+                                    예를들어, 홍길동 사용자가 A차량, B차량, C차량을 사용할 경우,<br>
+                                    A차량 5번, B차량 5번, C차량 5번으로 최대 15회 작성 가능합니다.<br>
+                                    플러스 및 프리미엄 등급은 무제한 작성할 수 있습니다.
+                                </p>
+                            </div>
                             <li>
                                 <a href="#"><span>Q.</span>무료체험을 위한 카드 등록 시 바로 결제가 되나요?</a>
                                 <i class="ques-img"></i>
+
+                            </li>
+                            <div class="ques-list-wrap ques-list-active ">
+                                <p>
+                                    결제 카드를 미리 등록하더라도 최초 무료체험 기간에는 결제되지 않습니다.
+                                </p>
+                            </div>
                             <li>
                                 <a href="#"><span>Q.</span>차량 사용 변동이 큰데 차량(라이선스)을 어떻게 설정해야 할까요?</a>
                                 <i class="ques-img"></i>
+
                             </li>
+                            <div class="ques-list-wrap ques-list-active ">
+                                <p>
+                                    <p class="list-box1">월 단위 결제</p><br><br>
+                                    매월 사용량을 미리 체크하고 변동되는 차량 만큼 축소/증가시켜 사용할 수 있습니다.<br>
+                                    "관리자페이지 접속 → 결제관리 → 정기결제관리" 에서 언제든 설정할 수 있습니다.<br><br>
+                                    <p class="list-box2">12개월 결제</p><br><br>
+                                    라이선스를 비교적 여유롭게 설정하고 12개월 결제로 사용할 수 있습니다.<br>
+                                    이 경우 연간 할인 적용으로 보다 저렴한 금액과 번거로운 라이선스 체크 없이<br>
+                                    최대 라이선스 내에서 편하게 사용할 수 있는 장점이 있습니다.
+                                </p>
+                            </div>
                             <li>
                                 <a href="#"><span>Q.</span>서비스 사용 중 차량(라이선스) 추가할 경우 어떻게 과금되나요?</a>
                                 <i class="ques-img"></i>
+
                             </li>
+                            <div class="ques-list-wrap ques-list-active ">
+                                <p>
+                                    기존 계약 만료일까지 추가되는 라이선스만큼 일할 계산해 즉시 과금됩니다.<br>
+                                    계산 공식 : 서비스 월단가 / 30 x 추가 라이선스 x 남은 서비스 일수M<br><br>
+                                    • 1개월은 30일로 계산됩니다.<br>
+                                    • 일 단가 계산 시 발생된 소수점 버림<br><br>
+                                    예를들어, 2021년 1월 1일에 플러스(PLUS) 등급으로 12개월 결제하고<br>
+                                    2021년 7월 1일에 차량 1대 추가할 경우, 서비스 일 단가는<br>
+                                    166원(5000/30)으로 계산되고 남은 6개월치 추가요금이<br>
+                                    한번에 결제됩니다. (부가세 별도)<br><br>
+                                    라이선스와 마찬가지로 계약 중 등급 업그레이드 역시 증가되는<br>
+                                    요금 만큼 일할 계산해 즉시 과금됩니다.<br>
+                                </p>
+                            </div>
                         </ul>
                     </div>
                 </div>
@@ -277,7 +382,7 @@
                     통신판매업신고번호 : 제 2017-대구남구-0110 호 |
                     위치기반 사업제1170호<br>
                     주소 : 대구광역시 남구 현충로 170 YNC천마스퀘어 806호 ㈜카택스 |
-                    대표전화 : 1800-9456  |
+                    대표전화 : 1800-9456 |
                     이메일 : <a href="mailto:help@cartax.biz">help@cartax.biz</a>
                 </address>
                 <p class="copy">
@@ -287,4 +392,5 @@
         </footer>
     </div>
 </body>
+
 </html>

@@ -35,6 +35,7 @@ html {
     margin: 0 auto;
 }
 
+
 /* header */
 .header {
     position: relative;
@@ -172,18 +173,68 @@ html {
     text-align: center;
     line-height: 45px;
     width: 50%;
-    background-color: #007bff;
+    /* background-color: #007bff; */
     border-radius: 24px;
+    color: #777;
 }
 
 .price-tab-yea a {
     font-size: 16px;
-    color: #fff;
-    font-weight: 600;
+    color: #777 !important;
 }
 
 .price-tab-yea:hover a {
-    color: #fff;
+    color: #777;
+}
+
+.active {
+    background-color: #007bff !important;
+    font-weight: 700;
+    border-radius: 24px;
+}
+
+.active a {
+    color: #fff !important;
+}
+
+.tab-wrap {
+    position: absolute;
+    right: 110px;
+    top: 70px;
+    width: 250px;
+    height: 40px;
+    background-color: #fff;
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 50%);
+    border-radius: 3px;
+    display: none;
+}
+
+.tab-txt {
+    position: relative;
+    display: block;
+    text-align: center;
+    line-height: 40px;
+    font-size: 15px;
+}
+
+.tab-txt b {
+    color: #057afa;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.tab-left {
+    position: absolute;
+    left: -13px;
+    top: 0;
+    display: block;
+    width: 0;
+    height: 0;
+    margin: 11px 0 0 2px;
+    border-color: transparent #ffffff transparent transparent;
+    border-style: solid;
+    border-width: 8px 12px 8px 0;
+    filter: drop-shadow(0 1px 0 rgba(0, 0, 0, 0.5));
 }
 
 .vat {
@@ -249,11 +300,50 @@ html {
     color: #4a4a4a;
     font-size: 20px;
     text-align: center;
+    font-weight: 700;
 }
 
 .price-box-price b {
     font-size: 35px;
-    font-weight: 500;
+    font-weight: 700;
+}
+
+.count-active {
+    display: none;
+}
+
+.price-top {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+    font-size: 15px;
+}
+
+.price-bot {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #1a2638;
+    font-weight: 700;
+    font-size: 14px;
+    margin-top: 60px;
+}
+
+.price-bot i {
+    display: inline-block;
+    width: 32px;
+    height: 18px;
+    background-color: #e3e7ea;
+    border-radius: 4px;
+    font-size: 10px;
+    line-height: 18px;
+    text-align: center;
+    margin-right: 10px;
+    color: #131415;
+    font-weight: 400;
 }
 
 .price-box-1-txt {
@@ -402,7 +492,7 @@ html {
 .details {
     position: relative;
     display: block;
-    
+
 }
 
 .details .container {
@@ -447,15 +537,18 @@ html {
     display: block;
     float: right;
 }
+
 .details-right a {
     font-size: 16px;
     color: rgb(5, 122, 250);
     margin-right: 150px;
 }
+
 .details-right a:hover {
     text-decoration: underline !important;
     color: rgb(5, 122, 250) !important;
 }
+
 .details .box1 {
     position: absolute;
     top: 100px;
@@ -470,9 +563,7 @@ html {
     position: relative;
     display: block;
 }
-.question .container {
 
-}
 
 .ques-tit {
     position: relative;
@@ -488,18 +579,21 @@ html {
     position: relative;
     display: block;
 }
+
 .ques-list ul {
     position: relative;
     display: block;
     width: 700px;
     margin: 0 auto;
 }
+
 .ques-list ul li {
     position: relative;
     display: block;
     height: 70px;
     border-top: 1px solid rgb(237, 240, 242);
 }
+
 .ques-list ul li:last-child {
     border-bottom: 1px solid rgb(237, 240, 242);
 }
@@ -513,6 +607,7 @@ html {
     text-align: left;
     line-height: 70px;
 }
+
 .ques-list ul li a span {
     color: #057afa;
     margin-right: 10px;
@@ -528,7 +623,39 @@ html {
     width: 14px;
     height: 9px;
     float: right;
+    cursor: pointer;
 }
+
+.ques-list-wrap {
+    position: relative;
+    display: none;
+    height: 100%;
+    font-size: 17px;
+    font-weight: 100;
+    text-align: left;
+    background-color: rgb(250, 250, 250);
+    color: rgb(62, 82, 101);
+    padding-left: 20px;
+}
+
+.list-box1 {
+    margin-top: 20px;
+    font-weight: 400;
+    border: 2px solid #566777;
+    display: inline-block;
+    border-radius: 20px;
+    padding: 5px 20px;
+}
+
+.list-box2 {
+    padding: 5px 20px;
+    font-weight: 400;
+    border: 2px solid #057afa;
+    color: #057afa;
+    border-radius: 20px;
+    display: inline-block;
+}
+
 
 /* contant */
 .contact {
@@ -536,9 +663,11 @@ html {
     display: block;
     text-align: center;
 }
+
 .contact .container {
     padding-top: 150px;
 }
+
 .contact-tit {
     position: relative;
     display: block;
@@ -546,6 +675,7 @@ html {
     font-weight: 700;
     font-size: 24px;
 }
+
 .contact-tit::before {
     content: '';
     position: absolute;
@@ -556,6 +686,7 @@ html {
     height: 2px;
     background-color: #e3e7ea;
 }
+
 .contact-txt {
     position: relative;
     display: block;
@@ -584,17 +715,20 @@ html {
     display: block;
     background-color: #404457;
 }
-.footer .container{
+
+.footer .container {
     height: 130px;
     margin-top: 100px;
     text-align: center;
 }
+
 .addres {
     font-size: 14px;
     color: #fff;
     padding-top: 25px;
     font-weight: 400;
 }
+
 .addres a {
     color: #fff;
 }
